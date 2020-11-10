@@ -1,0 +1,155 @@
+import java.time.LocalDate;
+import java.util.Objects;
+
+public class Patient {
+
+	private int patientId;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private LocalDate birthDate;
+	private String phoneNumber;j
+	private String gender;
+	
+	//constructor
+	
+	public Patient(int patientId, String firstName, String lastName, String email, LocalDate birthDate, String phoneNumber, String gender) {
+		setPatientId(patientId);
+		setFirstName(firstName);
+		setLastName(lastName);
+		setEmail(email);
+		setBirthDate(birthDate);
+		setPhoneNumber(phoneNumber);
+		setGender(gender);
+	}
+	
+	//getter
+	
+	/*
+	 * @return patiendtId
+	 */
+	public int getPatientId() {
+		return patientId;
+	}
+	/*
+	 * @return firstName
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+	/*
+	 * @return lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+	/*
+	 * @return email
+	 */
+	public String getEmail() {
+		return email;
+	}
+	/*
+	 * @return birthDate
+	 */
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+	/*
+	 * @return phoneNumber
+	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	/*
+	 * @return phoneNumber
+	 */
+	public String getGender() {
+		return gender;
+	}
+	
+	
+	//setter
+	
+	/*
+	 * @param patientId
+	 */
+	public void setPatientId(int patientId) {
+		if (patientId >= 1000 && 100000 >= patientId) {
+			this.patientId = patientId;
+		} else {
+			this.patientId = 1000;
+		}
+	}
+	/*
+	 * @param firstName
+	 */
+	public void setFirstName(String firstName) {
+		if (!firstName.isEmpty() && !firstName.equalsIgnoreCase(null)) {
+			this.firstName = firstName;
+		} else {
+			this.firstName = "Unknown";
+		}
+	}
+	/*
+	 * @param lastName
+	 */
+	public void setLastName(String lastName) {
+		if (!lastName.isEmpty() && !lastName.equalsIgnoreCase(null)) {
+			this.lastName = lastName;
+		} else {
+			this.lastName = "Unknown";
+		}
+	}
+	/*
+	 * @param email
+	 */
+	public void setEmail(String email) {
+		if (!email.isEmpty() && !email.equalsIgnoreCase(null)) {
+			this.email = email;
+		} else {
+			this.email = "Unknown";
+		}
+	}
+	/*
+	 * @param birthDate
+	 */
+	public void setBirthDate(LocalDate birthDate) {
+		if (Objects.nonNull(birthDate)) {
+			this.birthDate = birthDate;
+		} else {
+			this.birthDate = LocalDate.now();
+		}
+	}
+	/*
+	 * @param phoneNumber
+	 */
+	public void setPhoneNumber(String phoneNumber) {
+		if (!phoneNumber.isEmpty() && !phoneNumber.equalsIgnoreCase(null)) {
+			this.phoneNumber = phoneNumber;
+		} else {
+			this.phoneNumber = "Unknown";
+		}
+	}
+	/*
+	 * @param gender
+	 */
+	public void setGender(String gender) {
+		if (!gender.isEmpty() && !gender.equalsIgnoreCase(null)) {
+			this.gender = gender;
+		} else {
+			this.gender = "Unknown";
+		} 
+	}
+	
+	@Override
+	public String toString() {
+		return  "\nPatient ID: " + patientId + 
+				"\nFirst Name: " + firstName + 
+				"\nLast Name: " + lastName +  
+				"\nEmail: " + email + 
+				"\nBirth Date: " + birthDate + 
+				"\nPhone Number: " + phoneNumber +
+				"\nGender: " + gender;
+	}
+}
